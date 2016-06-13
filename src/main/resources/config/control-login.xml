@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE control SYSTEM "common-1.7-SNAPSHOT.dtd"> -->
+
+<control>
+	<action path="/front/sh/login!index" service="loginService" method="login">
+		<input uid="" service="" method="" desc="" >
+			<parameter key="name" order="0" regex="" />
+			<parameter key="password" order="1" regex="" />
+		</input>
+		<!-- 
+		<output uid="" convertor="com.cmos.chinamobile.media.convertor.BaseConvertor" />
+		-->
+	</action>
+</control>

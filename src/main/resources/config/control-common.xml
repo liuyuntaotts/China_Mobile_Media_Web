@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE control SYSTEM "common-1.7-SNAPSHOT.dtd"> -->
+
+<control>
+	<action path="/front/sh/common!execute" >
+		<input uid="c001" service="testService" method="testGetUser" desc="测试获取用户" >
+			<parameter key="name" toKey="userName" regex="required,num,length=5" />
+		</input>
+		
+		<input uid="c002" service="testService" method="testDelUser" desc="测试删除数据" >
+			<parameter key="userId" toKey="userId" regex="required,num,length=5" />
+		</input>
+	</action>
+</control>
