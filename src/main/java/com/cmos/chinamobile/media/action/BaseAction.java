@@ -2,6 +2,7 @@ package com.cmos.chinamobile.media.action;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 
+import com.cmos.chinamobile.media.action.base.ActionResult;
 import com.cmos.chinamobile.media.control.IControlService;
 import com.cmos.core.bean.InputObject;
 import com.cmos.core.bean.OutputObject;
@@ -99,6 +101,54 @@ public abstract class BaseAction extends ActionSupport implements BeanFactoryAwa
 		return inputObject;
 	}
 
+	@SuppressWarnings("unchecked")
+	public ActionResult<Object> getActionResult() {
+		ActionResult<Object> result = new ActionResult<Object>();
+		OutputObject output = getOutputObject();
+		if("0".equals(output.getReturnCode())){
+			result.setData(output.getBean());
+			result.setStatus("success");
+			result.setMessage("获取成功");
+		}else{
+			result.setStatus("fail");
+			result.setMessage(output.getReturnMessage());
+		}
+		if(output.getObject() != null){
+			Map<String, Object> resultMap = (Map<String, Object>) output.getObject();
+			try {
+				if(resultMap.containsKey("pageNum") && resultMap.get("pageNum") != null){
+					if(!"".equals(resultMap.get("pageNum").toString())){
+						result.setPageNum(Integer.parseInt(resultMap.get("pageNum").toString()));
+					}
+				}
+				if(resultMap.containsKey("pageSize") && resultMap.get("pageSize") != null){
+					if(!"".equals(resultMap.get("pageNum").toString())){
+						result.setPageSize(Integer.parseInt(resultMap.get("pageSize").toString()));
+					}
+				}
+				
+				if(resultMap.containsKey("totalPageCount") && resultMap.get("totalPageCount") != null){
+					if(!"".equals(resultMap.get("pageNum").toString())){
+						result.setTotalPageCount(Integer.parseInt(resultMap.get("totalPageCount").toString()));
+					}
+				}
+				
+				if(resultMap.containsKey("totalResultCount") && resultMap.get("totalResultCount") != null){
+					if(!"".equals(resultMap.get("pageNum").toString())){
+						result.setTotalResultCount(Integer.parseInt(resultMap.get("totalResultCount").toString()));
+					}
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				logger.error("", "分页数据有误", e);
+				result.setStatus("fail");
+				result.setMessage("分页数据获取错误");
+				result.setData("");
+			}
+			
+		}
+		return result;
+	}
 	/** Call Services and Get OutputObject Object **/
 	public OutputObject getOutputObject() {
 		return getOutputObject(getInputObject());

@@ -8,6 +8,6 @@
 	<dubbo:application name="consumer-of-nmgs"/>
 	
 	<dubbo:reference id="coreControlService" interface="com.cmos.core.service.IControlService"
-	url="dubbo://localhost:8075/com.cmos.core.service.IControlService" group="nmgscoreGroup" timeout="20000"  retries="0"/>
+	url="dubbo://192.168.1.115:28080/com.cmos.core.service.IControlService" group="nmgscoreGroup" timeout="20000"  retries="0"/>
 	
 </beans>

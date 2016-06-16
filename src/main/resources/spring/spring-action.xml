@@ -11,4 +11,6 @@
 	<bean id="loginAction" class="com.cmos.chinamobile.media.action.LoginAction" parent="baseAction" scope="prototype"/>
 
 	<bean id="commonAction" class="com.cmos.chinamobile.media.action.CommonAction" parent="baseAction" scope="prototype"/>
+	
+	<bean id="categoryAction" class="com.cmos.chinamobile.media.action.CategoryAction" parent="baseAction" scope="prototype"/>
 </beans>

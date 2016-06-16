@@ -2,21 +2,21 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cmos</groupId>
-	<artifactId>chinamobile</artifactId>
+	<artifactId>china_mobile_media_web</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
 	<name>China Mobile Media Cloud Maven Webapp</name>
 	<description>中移在线新媒体导购及服务平台项目</description>
 
-	<repositories><!-- 发现依赖和扩展的远程资源库 -->
-		<repository>
-			<id>chinamobile</id>
-			<name>ChinaMobile Repository Switchboard</name>
-			<layout>default</layout>
-			<url>http://192.168.100.10/nexus/content/groups/public/</url>
-		</repository>
+<!-- 	<repositories>发现依赖和扩展的远程资源库 -->
+<!-- 		<repository> -->
+<!-- 			<id>china_mobile_media_web</id> -->
+<!-- 			<name>ChinaMobile Repository Switchboard</name> -->
+<!-- 			<layout>default</layout> -->
+<!-- 			<url>http://192.168.100.10/nexus/content/groups/public/</url> -->
+<!-- 		</repository> -->
 		
-	</repositories>
+<!-- 	</repositories> -->
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,7 +95,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
-			<version>2.5.3</version>
+			<version>2.5.4</version>
 		</dependency>
 
 		<dependency>
@@ -143,7 +143,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>chinamobile</finalName>
+		<finalName>china_mobile_media_web</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/java</directory>
@@ -183,7 +183,7 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.0.0</version>
 				<configuration>
-					<contextPath>/chinamobile</contextPath>
+					<contextPath>/china_mobile_media_web</contextPath>
 					<scanIntervalSeconds>300</scanIntervalSeconds>
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
@@ -199,7 +199,7 @@
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<configuration>
 					<port>8090</port>
-					<path>/chinamobile</path>
+					<path>/china_mobile_media_web</path>
 					<!-- <url>http://localhost:8090/manager/html</url> -->
 					<!--<server>test</server> -->
 				</configuration>
