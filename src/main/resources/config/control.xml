@@ -5,4 +5,5 @@
 	<include file="config/control-login.xml"/>
 	<include file="config/control-common.xml"/>
 	<include file="config/control-category.xml" />
+	<include file="config/control-resource.xml" />
 </control>

@@ -112,6 +112,7 @@ public class AuthorityInterceptor extends AbstractInterceptor {
 			String key = p.getKey();
 			String toKey = p.getToKey();
 			String scope = p.getScope();
+			System.out.println(key+"--------"+toKey+"--------"+scope);
 			if (StringUtil.isEmpty(key)) {
 				continue;
 			}

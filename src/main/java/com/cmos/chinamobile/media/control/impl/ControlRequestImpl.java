@@ -19,19 +19,20 @@ public class ControlRequestImpl extends IControlRequest {
 	/**
 	 * 参数验证
 	 */
-	public ValidateResult validate(String path, List<Parameter> sources,
+	public ValidateResultImpl validate(String path, List<Parameter> sources,
 			Map<String, String[]> params) {
 		if (sources == null) {
-			return new ValidateResult(RETURN_CODE.IS_OK, null);
+			return new ValidateResultImpl(RETURN_CODE.IS_OK, null);
 		}
 
 		// 验证请求的参数个数�?顺序、和正则�?
 		ValidateResult result = ControlRequestUtil.checkParams(sources, params);
+		ValidateResultImpl resultImpl = new ValidateResultImpl(result.getReturnCode(), result.getReturnMessage());
 		if (!RETURN_CODE.IS_OK.equals(result.getReturnCode())) {
 			System.err.println("参数验证有问�?" + path);
 			logger.error("参数验证有问�?", "path=" + path);
 		}
-		return result;
+		return resultImpl;
 	}
 	
 	public boolean loginValidate(HttpServletRequest arg0) {

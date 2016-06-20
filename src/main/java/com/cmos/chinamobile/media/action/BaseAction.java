@@ -106,7 +106,12 @@ public abstract class BaseAction extends ActionSupport implements BeanFactoryAwa
 		ActionResult<Object> result = new ActionResult<Object>();
 		OutputObject output = getOutputObject();
 		if("0".equals(output.getReturnCode())){
-			result.setData(output.getBean());
+			if(output.getBean() != null && !output.getBean().isEmpty()){
+				result.setData(output.getBean());
+			}else{
+				result.setData(output.getBeans());
+			}
+//			result.setData(output.getBean());
 			result.setStatus("success");
 			result.setMessage("获取成功");
 		}else{

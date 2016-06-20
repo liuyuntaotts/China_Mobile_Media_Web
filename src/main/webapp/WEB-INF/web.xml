@@ -39,7 +39,7 @@
 
 	<filter>
 		<filter-name>control</filter-name>
-		<filter-class>com.cmos.core.filter.IControlRequestFilter</filter-class>
+		<filter-class>com.cmos.chinamobile.media.filter.IControlRequestFilter</filter-class>
 		<init-param>
 			<param-name>controlRequestImpl</param-name>
 			<param-value>com.cmos.chinamobile.media.control.impl.ControlRequestImpl</param-value>
