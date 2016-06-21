@@ -4,10 +4,10 @@ import com.cmos.chinamobile.media.action.base.ActionResult;
 import com.cmos.core.logger.Logger;
 import com.cmos.core.logger.LoggerFactory;
 
-public class ResourceAction extends BaseAction {
-	
-	private static final long serialVersionUID = 2318623804948146943L;
-	private static final Logger logger = LoggerFactory.getActionLog(ResourceAction.class);
+public class VideoIframeAction extends BaseAction {
+
+	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LoggerFactory.getActionLog(VideoIframeAction.class);
 	
 	public String execute() {
 		logger.info("execute", "Start");

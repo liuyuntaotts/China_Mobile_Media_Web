@@ -12,18 +12,18 @@
 			<parameter key="scode" toKey="scode"/>
 			<parameter key="pagenum" toKey="pagenum" regex="num,maxlength=6"/>
 			<parameter key="pagesize" toKey="pagesize" regex="num,maxlength=6"/>
-			<parameter key="sorts" toKey="sorts"/>
+			<parameter key="sort" toKey="sort"/>
 		</input>
 		
-		<input uid="a0002" service="categoryService" method="add" desc="加载栏目详细信息">
+		<input uid="a0002" service="categoryService" method="load" desc="加载栏目详细信息">
+			<parameter key="id" toKey="id" regex="required,length=36"/>
+		</input>
+		
+		<input uid="a0003" service="categoryService" method="add" desc="添加栏目">
 			<parameter key="name" toKey="name" regex="required,length=36"/>
 			<parameter key="parent" toKey="parent" regex="length=36"/>
 			<parameter key="status" toKey="status" regex="required"/>
 			<parameter key="usersession.id" toKey="creator" scope="session" regex="required"/>
-		</input>
-		
-		<input uid="a0003" service="categoryService" method="load" desc="添加栏目">
-			<parameter key="id" toKey="id" regex="required,length=36"/>
 		</input>
 		
 		<input uid="a0004" service="categoryService" method="edit" desc="编辑栏目">

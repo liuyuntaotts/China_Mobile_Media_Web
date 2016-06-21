@@ -112,7 +112,6 @@ public class AuthorityInterceptor extends AbstractInterceptor {
 			String key = p.getKey();
 			String toKey = p.getToKey();
 			String scope = p.getScope();
-			System.out.println(key+"--------"+toKey+"--------"+scope);
 			if (StringUtil.isEmpty(key)) {
 				continue;
 			}
@@ -150,7 +149,7 @@ public class AuthorityInterceptor extends AbstractInterceptor {
 						String[] contentTypes = (String[]) fileMap.get(key + ControlConstants.FILE.CONTENTTYPE);
 						String[] fileNames = (String[]) fileMap.get(key + ControlConstants.FILE.FILENAME);
 						if (files.length == 1) {// 单个文件
-							inputObject.addParams(key, toKey, ConvertUtil.file2String(files[0]));
+							inputObject.getParams().put(key, files[0]);
 							inputObject.addParams(key + ControlConstants.FILE.CONTENTTYPE, 
 									toKey == null ? null : toKey + ControlConstants.FILE.CONTENTTYPE, contentTypes[0]);
 							inputObject.addParams(key + ControlConstants.FILE.FILENAME, 

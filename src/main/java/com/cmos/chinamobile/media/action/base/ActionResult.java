@@ -1,13 +1,5 @@
 package com.cmos.chinamobile.media.action.base;
 
-
-/**
- * JSONResult : Response JSONResult for RESTful,封装返回JSON格式的数据
- *
- * @author Clark_Rong
- * @since 2016-03-23 11:17
- */
-
 public class ActionResult<T> extends BaseResult {
 
     private static final long serialVersionUID = 7880907731807860636L;

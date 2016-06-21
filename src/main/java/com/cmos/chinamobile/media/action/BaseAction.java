@@ -144,7 +144,6 @@ public abstract class BaseAction extends ActionSupport implements BeanFactoryAwa
 					}
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
 				logger.error("", "分页数据有误", e);
 				result.setStatus("fail");
 				result.setMessage("分页数据获取错误");
