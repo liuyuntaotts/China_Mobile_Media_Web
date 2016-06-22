@@ -53,7 +53,6 @@ public class AuthorityInterceptor extends AbstractInterceptor {
 
 	private void createInputObject() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		System.out.println(request.getParameter("aaa"));
 		
 		String path = request.getRequestURI();
 

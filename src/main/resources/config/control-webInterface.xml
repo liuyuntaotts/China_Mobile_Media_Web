@@ -2,7 +2,7 @@
 <!-- <!DOCTYPE control SYSTEM "common-1.7-SNAPSHOT.dtd"> -->
 
 <control>
-	<action path="/front/admin/webInterface!execute">
+	<action path="/front/web/webInterface!execute">
 		<input uid="i0001" service="webInterfaceService" method="categoryList" desc="获取栏目列表">
 			<parameter key="parent" toKey="parent" regex="length=36"/>
 		</input>

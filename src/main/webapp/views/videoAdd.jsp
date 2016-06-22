@@ -182,7 +182,7 @@
 							});
 							
 							$("#resourceId").uploadFile({
-								url:"../front/admin/resource!execute?uid=b0001",
+								url:"../front/admin/resource!execute?uid=d0001",
 								allowedTypes:"mp4,avi,mov,3gp,flv,wmv,rmvb,zip",
 								maxFileSize:1024*1024*1024*10,
 								fileName:"video",

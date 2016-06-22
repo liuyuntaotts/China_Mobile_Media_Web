@@ -5,14 +5,16 @@
 <struts>
 	
 	<include file="struts/struts-admin.xml" />
+	<include file="struts/struts-web.xml" />
 
 	<package name="projectstruts" extends="struts-default">
 		<interceptors>
-			<interceptor name="authority"
-				class="com.cmos.chinamobile.media.interceptor.AuthorityInterceptor" />
-
+			<interceptor name="authority" class="com.cmos.chinamobile.media.interceptor.AuthorityInterceptor" />
+			<interceptor name="CSRFInterceptor" class="com.cmos.chinamobile.media.interceptor.CSRFInterceptor" />  
+			
 			<interceptor-stack name="projectdefault">
 				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="CSRFInterceptor" />
 				<interceptor-ref name="authority" />
 			</interceptor-stack>
 		</interceptors>
