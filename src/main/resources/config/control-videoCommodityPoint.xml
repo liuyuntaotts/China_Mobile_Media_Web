@@ -4,7 +4,7 @@
 <control>
 	<action path="/front/admin/videoCommodityPoint!execute">
 		<input uid="e0001" service="videoCommodityPointService" method="list" desc="获取视频节点列表">
-			<parameter key="video" toKey="video" regex="length=36"/>
+			<parameter key="video" toKey="video"/>
 			<parameter key="sort" toKey="sort"/>
 		</input>
 		

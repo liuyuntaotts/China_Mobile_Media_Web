@@ -76,9 +76,9 @@
     background: url(../../web/images/volume20160122.png) no-repeat;
     background-size:contain;
 }
-.barbar button{ width:31px; outline:none; height:29px;float:right;margin-top:18px;  border:none; background:url(../../web/images/voice.png) no-repeat;margin-left: 10px;background-size:contain;}
+.barbar button{ width:25px; outline:none; height:24px;float:right;margin-top:18px;  border:none; background:url(../../web/images/voice.png) no-repeat;margin-left: 10px;background-size:contain;}
 .barbar button.bglightt{background:url(../../assets/img/voice2.png) no-repeat;background-size:contain;}
-.barbar input{ height:3px; float:right;margin-top:20px; width: 80px;}
+.barbar input{ height:3px; float:right;margin-top:18px; width: 80px;}
 .barbar b {
     height: 55px;
     width: 72.5px;

@@ -13,20 +13,16 @@ $(function(){
 		$("#content .content_inner p.title").html(title+"<span style='font-size:0.30rem;'>&nbsp;&bull;&nbsp;"+childname+"</span>")
 	}
 	if(parent==""||title==""){
-//		location.href=document.referrer;
 		history.go(-1);
 	}
 	$(".goback").click(function(){
-//		console.log(history.go(-1))
-//		location.href=document.referrer;
 		history.go(-1);
 	})
 })
 
 //获取列表
 function getList(){
-	$.get('../rest/webinterface/categoryList',function(r){
-		//console.log(r)
+	$.get('../front/web/webinterface!execute?uid=i0001',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -47,8 +43,7 @@ function screen(e){
 	n=1;
 	var src="";
 	var clear="<div class='clear'></div>";
-	$.get('../rest/webinterface/publishList?category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
-		//console.log(r)
+	$.get('../front/web/webinterface!execute?uid=i0002&category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
     	count=r.totalPageCount;
 		if(r.status=="success"){
 			var str ="";
@@ -87,7 +82,7 @@ function screen(e){
 function screens(){
 	var src="";
 	var clear="<div class='clear'></div>";
-	$.get('../rest/webinterface/publishList?category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
+	$.get('../front/web/webinterface!execute?uid=i0002&category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
     	count=r.totalPageCount;
 		if(r.status=="success"){
 			var str ="";
@@ -119,8 +114,7 @@ function screens(){
 
 //获取二级列表
 function secondary(parent){
-	$.get('../rest/webinterface/categoryList?parent='+parent,function(r){
-		//console.log(r);
+	$.get('../front/web/webinterface!execute?uid=i0001&parent='+parent,function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {

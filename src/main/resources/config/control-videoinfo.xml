@@ -4,7 +4,7 @@
 <control>
 	<action path="/front/admin/videoinfo!execute">
 		<input uid="g0001" service="videoinfoService" method="list" desc="获取视频列表">
-			<parameter key="id" toKey="id" regex="length=36"/>
+			<parameter key="id" toKey="id"/>
 			<parameter key="title" toKey="title"/>
 			<parameter key="status" toKey="status"/>
 			<parameter key="pagenum" toKey="pagenum" regex="num,maxlength=6"/>

@@ -4,11 +4,11 @@
 <control>
 	<action path="/front/web/webInterface!execute">
 		<input uid="i0001" service="webInterfaceService" method="categoryList" desc="获取栏目列表">
-			<parameter key="parent" toKey="parent" regex="length=36"/>
+			<parameter key="parent" toKey="parent"/>
 		</input>
 		
 		<input uid="i0002" service="webInterfaceService" method="publishList" desc="获取发布列表">
-			<parameter key="video" toKey="video" regex="length=36"/>
+			<parameter key="video" toKey="video"/>
 			<parameter key="category" toKey="category" regex="required,length=36"/>
 			<parameter key="pagenum" toKey="pagenum" regex="num,maxlength=6"/>
 			<parameter key="pagesize" toKey="pagesize" regex="num,maxlength=6"/>

@@ -90,8 +90,7 @@ var parentid;
 var urls;
 //获取商品信息
 function getCommodity(id){
-	$.get('../rest/webinterface/commodityInfo?id='+id,function(r){
-// 		console.log(r);
+	$.get('../front/web/webinterface!execute?uid=i0004id='+id,function(r){
 		if(r.status=="success"){
 			$(".shoppers a.goBuy").attr("href",r.data.commodityURL);
 			$(".shoppers .shoppersLeft h1").html(r.data.name);

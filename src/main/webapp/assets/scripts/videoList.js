@@ -1,25 +1,5 @@
 var Video=document.getElementById("zeppinVideo");
 var Show="";
-//弹出视频
-//function layerVideo(obj){
-//	$.get('../rest/videoinfo/loadVO?id='+$(obj).attr("name"),function(r) {
-//		if(r.status =='success') {
-//			Show=layer.open({
-//				type: 1,
-//				area: ['70%', ''],
-//				title: false,
-//				closeBtn: 1,
-//				offset: ['80px',''],
-//				scrollbar: false,
-//				shadeClose: false,
-//				content: "<div class='ZeppinVideo'><video id='zeppinVideo' controls='controls' style='width:100%;'><source id='videoSource' src='.."+r.data.originalVideoUrl+"'>您的版本不支持该视频播放，请更换浏览器或者升级浏览器版本</video><div class='ZeppinVideo_Bottom'><div class='ProgressBar'><div class='ProgressBarNode'></div><div class='timeBar'></div></div><div class='barbar'><b class='bglight'></b><span class='currentTime'>00:00</span><span class='totleTime'>00:00</span></div></div></div>"
-//				}); 
-////					$(".layui-layer-setwin .layui-layer-close2").css("display", "none");
-//			   	$(".layui-layer-rim").css({"border":"none","border-radius":"0px"});
-//		}
-//	})
-//	
-//}
 $(function(){
 	 if(isFirefox=navigator.userAgent.indexOf("Firefox")>0){  
         $(".barbar input").css("margin-top","5px");
@@ -62,12 +42,10 @@ function ClickVideo(video){
     function clickZeppinVideo() {
         if (video.paused || video.ended) {
             video.play();
-            //$(video).parent().find("b").css({ "display": "none" });
             $(".barbar b").removeClass("bglight");
         }
         else {
             video.pause();
-            //$(video).parent().find("b").css({ "display": "block" });
             $(".barbar b").addClass("bglight");
         }
     }
@@ -126,8 +104,7 @@ var Show;
 function shows(id){
 	document.getElementById("zeppinVideo").pause();
 	$(".barbar b").addClass("bglight");
-	$.get('../rest/webinterface/commodityInfo?id='+id,function(r){
-// 		console.log(r);
+	$.get('../front/web/webinterface!execute?uid=i0004&id='+id,function(r){
 		if(r.status=="success"){
 			Show=layer.open({
 				  type: 1,
@@ -158,13 +135,10 @@ function shows(id){
 			alert(r.message);
 		}
 	});
-//	$(".bg").css("display","block");
-//	$(".showlayer").css("display","block");
 
 }
 function ZeppinVideo_TopB(obj) {
     var VIDEO = $(obj).parent().parent().parent().parent().parent().siblings().find("video").get(0);
-    //VIDEO.pause()
     $(VIDEO).parent().find("b").css({ "display": "block" })
     $(VIDEO).parent().siblings().find(".barbar b").addClass("bglight")
 }
@@ -193,7 +167,6 @@ function playTime(){
 				for(var j=i+1;j<arr.length;j++){
 						var bottom=$(".videoAnimate"+j).css("bottom");
 						bottom=Number(bottom.substring(0,bottom.length-2))+70;
-						alert(bottom+"&"+j);
 						$(".videoAnimate"+j).animate({"bottom":bottom+"px"});
 					
 				}
@@ -208,27 +181,14 @@ function playTime(){
 		}
 	}
 	
-//	else if(Math.round(Video.currentTime)==15){
-//		$("p.animate").fadeOut(1500);
-//	}
 }
 var urls;
 var id;
 var pointTime
 $(function(){
-//	id = (url('?id') != null) ? url('?id') : '';
-//	urls=decodeURI((url('?url') != null) ? url('?url') : '');
-//	pointTime = (url('pointTime') != null) ? url('?pointTime') : '';
 	var point;
 	arr = [];
-//	videoInfo(id);
-//	alert(point);
-	
-//	var videostr="<video id='zeppinVideo'><source id='videoSource' src='.."+urls+"'>您的版本不支持该视频播放，请更换浏览器或者升级浏览器版本</video>";
-//	$(".ZeppinVideo_Top").append(videostr);
-//	ClickVideo(document.getElementById("zeppinVideo"));
 	if(id==""){
-//		location.href=document.referrer;
 		history.go(-1);
 	}
 })
@@ -240,8 +200,7 @@ function aaa(e){
 
 //获取视频信息
 function layerVideo(a){
-	$.get('../rest/webinterface/videoInfo?id='+$(a).attr("name"),function(r){
-		//console.log(r)
+	$.get('../front/web/webinterface!execute?uid=i0003&id='+$(a).attr("name"),function(r){
 		if(r.status=="success"){
 			Show=layer.open({
 				type: 1,
@@ -253,13 +212,12 @@ function layerVideo(a){
 				shadeClose: false,
 				content: "<div class='ZeppinVideo'><div class='ZeppinVideo_Top'><video id='zeppinVideo' controls='controls' style='width:100%;'><source id='videoSource' src='.."+r.data.videoURLs[1]+"'>您的版本不支持该视频播放，请更换浏览器或者升级浏览器版本</video></div><div class='ZeppinVideo_Bottom'><div class='ProgressBar'><div class='ProgressBarNode'></div><div class='timeBar'></div></div><div class='barbar'><b class='bglight'></b><span class='currentTime'>00:00</span><span class='totleTime'>00:00</span><select class='type'  onchange='changeType(this)'><option>流畅</option><option selected='selected'>高清</option><option>超清</option></select><input min='0' max='1' step='0.1' type='range'><button></button></div></div></div>"
 				}); 
-//					$(".layui-layer-setwin .layui-layer-close2").css("display", "none");
 			   	$(".layui-layer-rim").css({"border":"none","border-radius":"0px"});
 			for(var i=0;i<r.data.videoURLs.length;i++){
 				$(".barbar select option:eq("+i+")").attr("value",r.data.videoURLs[i]);			
 			}
 			if(navigator.userAgent.toLowerCase().indexOf('chrome')>-1) {			    
-				$(".barbar input").css("margin-top","27px")
+				$(".barbar input").css("margin-top","25px")
 			}
 			var str="";
 			var nodestr="";

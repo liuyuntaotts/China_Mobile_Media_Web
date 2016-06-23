@@ -2,19 +2,16 @@
 .ZeppinVideo {
         position: relative;
         width: 100%;
-        /*min-height:500px;*/
        padding-bottom: 0.53rem;
     }
 
 .ZeppinVideo .ZeppinVideo_Top {
-            /*height: 4.20rem;*/
             width: 100%;
             position: relative;
             background:#333;
         }
 
 .ZeppinVideo .ZeppinVideo_Top video {
-                /*height: 675px;*/
                 width: 100%;
                 font-size:0.3rem;
                 cursor:pointer;
@@ -82,7 +79,6 @@
 .barbar {
  width:100%;
  position:relative;
-/*  top:0.06rem; */
 }
 .barbar button {
     width: 0.31rem;
@@ -137,7 +133,7 @@
 .swiper-slide img{ width: 100%;}
 
 #content{ background-color: #FFFFFF;}
-#content .content_inner{ width: 100%; /*max-width: 750px; padding: 0 0.25rem;*/}
+#content .content_inner{ width: 100%;}
 #content .content_inner div.infomation{padding: 0 0.25rem;}
 #content .content_inner div.infomation p.title{ font-size: 0.38rem; line-height: 0.6rem; color: #333333; font-weight: bold; padding: 0.2rem 0;}
 #content .content_inner div.infomation p.detailss{ color: #888888; font-size: 0.3rem; line-height: 0.48rem; padding-bottom: 0.2rem;}
@@ -237,14 +233,6 @@
                 left:100%;
             }
         }
-/* @keyframes animation5 {
-            0%{
-                transform: translate3d(0.05rem,0.05rem,0px);
-            }
-            100%{
-                transform: translate3d(0px,0px,0px);
-            }
-        } */
 
  /* animation0 */
         @-webkit-keyframes animation0 {
@@ -489,16 +477,8 @@
 .videoAnimate{position: absolute;bottom:0.842rem;right:0.2rem;z-index:9;display:none;}
 .videoAnimate .imgP{background:rgba(168,217,248,0.99);width:0.6rem;height:0.6rem;border-radius:0.3rem;float:left;z-index:1;}
 .videoAnimate .imgP img{ width:0.4rem;max-height:0.4rem;margin:0.1rem;}
-.videoAnimate .titleP{text-align:left;font-size:0.18rem; word-break:break-all;background:rgba(0,0,0,0.5);color:#fff;float:left;height:0.4rem;line-height:0.4rem;padding:0rem 0.1rem;border-radius:0.15rem 0 0 0.15rem;margin-top:0.1rem;margin-right:-0.05rem;overflow:hidden;
-/* -webkit-animation: title 1s ease-in-out 1 alternate;
-            -moz-animation: title 1s ease-in-out 1 alternate;
-            -o-animation: title 1s ease-in-out 1 alternate;
-            animation: title 1s ease-in-out 1 alternate; */}
-.videoAnimate .scale{position: absolute; width:0.2rem;height:0.2rem; border-radius:0.1rem;border:#a8d9f8 0.01rem solid;right:0.2rem;top:0.2rem;
-/* -webkit-animation: kuosan 1.5s ease-out infinite normal;
-            -moz-animation: kuosan 1.5s ease-out infinite normal;
-            -o-animation: kuosan 1.5s ease-out infinite normal;
-            animation: kuosan 1.5s ease-out infinite normal; */}
+.videoAnimate .titleP{text-align:left;font-size:0.18rem; word-break:break-all;background:rgba(0,0,0,0.5);color:#fff;float:left;height:0.4rem;line-height:0.4rem;padding:0rem 0.1rem;border-radius:0.15rem 0 0 0.15rem;margin-top:0.1rem;margin-right:-0.05rem;overflow:hidden;}
+.videoAnimate .scale{position: absolute; width:0.2rem;height:0.2rem; border-radius:0.1rem;border:#a8d9f8 0.01rem solid;right:0.2rem;top:0.2rem;}
 
 
 @-webkit-keyframes title{
@@ -592,14 +572,3 @@
 }
 
 
-@media screen and (orientation:portrait) {
-
-/* css[竖向定义样式] */
-
-}
-
-@media screen and (orientation:landscape) {
-
-/* #header{background:#f00;} */
-
-}

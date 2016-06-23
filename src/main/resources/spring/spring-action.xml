@@ -8,6 +8,13 @@
 	</bean>
 	
 	<bean id="categoryAction" class="com.cmos.chinamobile.media.action.CategoryAction" parent="baseAction" scope="prototype"/>
-	
+	<bean id="commodityAction" class="com.cmos.chinamobile.media.action.CommodityAction" parent="baseAction" scope="prototype"/>
+	<bean id="leftAction" class="com.cmos.chinamobile.media.action.LeftAction" parent="baseAction" scope="prototype"/>
 	<bean id="resourceAction" class="com.cmos.chinamobile.media.action.ResourceAction" parent="baseAction" scope="prototype"/>
+	<bean id="userAction" class="com.cmos.chinamobile.media.action.UserAction" parent="baseAction" scope="prototype"/>
+	<bean id="videoCommodityPointAction" class="com.cmos.chinamobile.media.action.VideoCommodityPointAction" parent="baseAction" scope="prototype"/>
+	<bean id="videoIframeAction" class="com.cmos.chinamobile.media.action.VideoIframeAction" parent="baseAction" scope="prototype"/>
+	<bean id="videoinfoAction" class="com.cmos.chinamobile.media.action.VideoinfoAction" parent="baseAction" scope="prototype"/>
+	<bean id="videoPublishAction" class="com.cmos.chinamobile.media.action.VideoPublishAction" parent="baseAction" scope="prototype"/>
+	<bean id="webInterfaceAction" class="com.cmos.chinamobile.media.action.WebInterfaceAction" parent="baseAction" scope="prototype"/>
 </beans>

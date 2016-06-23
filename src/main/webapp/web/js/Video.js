@@ -1,47 +1,32 @@
 var Video=document.getElementById("zeppinVideo");
 $(function(){
-//	showsss();
-//		alert($(".titleP").width());
 		if(navigator.userAgent.indexOf('Android') > -1) {
-//			$(" .aaaaaaaa").html(navigator.userAgent);
-//			   alert("Android");
 			if(navigator.userAgent.indexOf('UCBrowser') > -1) {
-//				    alert("uc");
-//				$(".swiper-container").css("display","none");
 				$(".playAnimate").css("display","none");
 				$(".ZeppinVideo_Bottom").css("display","none");
 				$(".ZeppinVideo").css("padding-bottom","0rem");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf("360se")>-1) {
-//				    alert("360");
-//					$(".swiper-container").css("display","none");
 					$(".playAnimate").css("display","none");
 					$(".ZeppinVideo_Bottom").css("display","none");
 					$(".ZeppinVideo").css("padding-bottom","0rem");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf('baidu')>-1) {
-//				   alert("baidu");
-//					$(".swiper-container").css("display","none");
 					$(".playAnimate").css("display","none");
 					$(".ZeppinVideo_Bottom").css("display","none");
 					$(".ZeppinVideo").css("padding-bottom","0rem");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf('qqbrowser')>-1) {
-//				    alert("qq");
-					//$(".swiper-container").css("display","none");
 					$(".playAnimate").css("display","none");
 					$(".ZeppinVideo_Bottom").css("display","none");
 					$(".ZeppinVideo").css("padding-bottom","0rem");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf('se')>-1) {
-//				    alert("sougo");
-//					$(".swiper-container").css("display","none");
 					$(".playAnimate").css("display","none");
 					$(".ZeppinVideo_Bottom").css("display","none");
 					$(".ZeppinVideo").css("padding-bottom","0rem");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf('firefox')>-1) {
-//				    alert("huohu");
 					$(".swiper-container").css("display","none");
 					$(".barbar .currentTime").css("font-size","0.2rem");
 					$(".barbar .totleTime").css("font-size","0.2rem");
@@ -49,59 +34,47 @@ $(function(){
 					$(".playAnimate").css("display","none");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf('chrome')>-1) {
-//				    alert("chrome");
 					$(".swiper-container").css("display","none");
 					$(".playAnimate").css("display","none");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf('firefox')>-1&&navigator.userAgent.toLowerCase().indexOf('360')>-1) {
-//				    alert("chromehuohu");
 					$(".swiper-container").css("display","none");
 
 				}else if(navigator.userAgent.toLowerCase().indexOf("Opera")>-1) {
-//				    alert("opera");
 					$(".swiper-container").css("display","none");
 					$(".barbar .currentTime").css("font-size","0.2rem");
 					$(".barbar .totleTime").css("font-size","0.2rem");
 					$(".videoAnimate .titleP").css("font-size","0.26rem");
 					$(".playAnimate").css("display","none");
 				}else if(navigator.userAgent.toLowerCase().indexOf('qqbrowser')>-1&&navigator.userAgent.toLowerCase().indexOf('chrome')>-1&&navigator.userAgent.toLowerCase().indexOf('se')>-1) {
-//				   alert("微信");
 				   $(".playAnimate").css("display","none");
 				   $(".swiper-container").css("display","block");
 
 				}else{ 
-//					alert("else");
 					$(".playAnimate").css("display","none");
 				}
 
 		}else if(navigator.userAgent.indexOf('iPhone') > -1) {
-			//alert(navigator.userAgent)
-			   //alert("iPhone");
 			$(".barbar .currentTime").css("font-size","0.28rem");
 			$(".barbar .totleTime").css("font-size","0.28rem");
 			$(".videoAnimate .titleP").css("font-size","0.28rem");
 			if(navigator.userAgent.toLowerCase().match(/MicroMessenger/i)=="micromessenger") {
-//			    alert("iphone微信");
 				$(".swiper-container").css("display","none");
 				$(".playAnimate").css("display","none");
 
 			}else if(navigator.userAgent.toLowerCase().indexOf('qq')>-1) {
-//			    alert("qq");
 				$(".swiper-container").css("display","none");
 				$(".playAnimate").css("display","none");
 
 			}else if(navigator.userAgent.toLowerCase().indexOf('se')>-1) {
-//			    alert("sougo");
 				$(".swiper-container").css("display","none");
 
 			}else{
-				//alert('else')
 				$(".playAnimate").css("display","none");
 			}
 			
 
 		}else{
-//			alert("else")
 			$(".playAnimate").css("display","none");
 		}
 	
@@ -215,8 +188,6 @@ function shows(){
 	}); 
 	$(".layui-layer-setwin .layui-layer-close2").css("display", "none");
    	$(".layui-layer-rim").css({"border":"none","border-radius":"0px"});
-//	$(".bg").css("display","block");
-//	$(".showlayer").css("display","block");
 
 }
 var Shows;
@@ -250,7 +221,6 @@ function stopBubble(e) {
 
 function ZeppinVideo_TopB(obj) {
     var VIDEO = $(obj).parent().parent().parent().parent().parent().siblings().find("video").get(0);
-    //VIDEO.pause()
     $(VIDEO).parent().find("b").css({ "display": "block" })
     $(VIDEO).parent().siblings().find(".barbar b").addClass("bglight")
 }
@@ -283,10 +253,7 @@ function playTime(){
 					
 				}
 				$("div.animation"+i).parent().fadeIn();
-				//$(".videoAnimate").css("display","none");
 				$(".videoAnimate"+i).css("display","block");
-	//			var titleP=document.getElementById("titlePa");
-	//			titleP.style.width="1.8rem";
 				$(".videoAnimate .titleP"+i).css({"-webkit-animation":"title 1s ease-in-out alternate","-moz-animation":"title 1s ease-in-out alternate","-o-animation":"title 1s ease-in-out alternate","animation":"title 1s ease-in-out alternate"});
 				$(".videoAnimate .scale"+i).css({"-webkit-animation":"bian 1.5s ease-out infinite normal","-moz-animation":"bian 1.5s ease-out infinite normal","-o-animation":"bian 1.5s ease-out infinite normal","animation":"bian 1.5s ease-out infinite normal"});
 			}
@@ -295,10 +262,6 @@ function playTime(){
 			$(".videoAnimate"+i).css("display","none");
 		}
 	}
-	
-//	else if(Math.round(Video.currentTime)==15){
-//		$("p.animate").fadeOut(1500);
-//	}
 }
 var urls;
 var id;
@@ -312,20 +275,15 @@ $(function(){
 	arr = [];
 	videoInfo(id);
 	related(id);
-//	alert(point);
 	setInterval("playTime()",500);
-//	var videostr="<video id='zeppinVideo'><source id='videoSource' src='.."+urls+"'>您的版本不支持该视频播放，请更换浏览器或者升级浏览器版本</video>";
-//	$(".ZeppinVideo_Top").append(videostr);
-//	ClickVideo(document.getElementById("zeppinVideo"));
 	if(id==""){
-//		location.href=document.referrer;
 		history.go(-1);
 	}
 })
 
 //获取列表
 function getList(){
-	$.get('../rest/webinterface/categoryList',function(r){
+	$.get('../front/web/webinterface!execute?uid=i0001',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -333,7 +291,7 @@ function getList(){
 			}	
 			$("ul.Index").append(str);
 		}else{
-			//alert(r.message);
+			
 		}
 	});
 }
@@ -344,8 +302,7 @@ function aaa(e){
 
 //获取视频信息
 function videoInfo(a){
-	$.get('../rest/webinterface/videoInfo?id='+a,function(r){
-		//console.log(r)
+	$.get('../front/web/webinterface!execute?uid=i0003&id='+a,function(r){
 		if(r.status=="success"){
 			$("#content .content_inner div.infomation p.title").html(r.data.videoTitle);
 			$("#content .content_inner div.infomation p.detailss").html(r.data.videoContext);
@@ -354,9 +311,6 @@ function videoInfo(a){
 			var nodestr="";
 			var pinfo="";
 			var animatestr="";
-//			for(var i=0;i<r.data.videoURLs.length;i++){
-//				$(".barbar select option:eq("+i+")").attr("value",r.data.videoURLs[i]);			
-//			}
 			var videostr="<video id='zeppinVideo' webkit-playsinline><source id='videoSource' src='.."+r.data.videoURLs[1]+"'>您的版本不支持该视频播放，请更换浏览器或者升级浏览器版本</video>";
 			$(".ZeppinVideo_Top").append(videostr);
 //			总时长
@@ -371,8 +325,7 @@ function videoInfo(a){
 			}
 			$(".totleTime").html(totleMinutes+":"+totleSeconds);
 			ClickVideo(document.getElementById("zeppinVideo"));
-			for(var i=r.data.webVideoPoints.length-1;i>=0;i--){	
-//			for(var i=0;i<r.data.webVideoPoints.length;i++){	
+			for(var i=r.data.webVideoPoints.length-1;i>=0;i--){		
 				nodestr="";
 				pinfo="";
 				animatestr="<div class='videoAnimate videoAnimate"+i+"'><a href='Show.html?id="+r.data.webVideoPoints[i].commodity+"&parentid="+id+"&pointTime="+arr[i]+"'><p class='titleP titleP"+i+"'>点击购买"+r.data.webVideoPoints[i].showMessage+"</p><p class='imgP imgP"+i+"'><img src='.."+r.data.webVideoPoints[i].commodityCover+"' alt='产品图片'></p><p class='scale scale"+i+"'></p></div>"+animatestr;
@@ -416,34 +369,25 @@ function videoInfo(a){
 var clickBannerTime=0;
 function changeType(t){
 	var thistime = document.getElementById("zeppinVideo").currentTime;
-	//alert(thistime);
 	var playType = document.getElementById("zeppinVideo").paused;
 	var url = $(t).val();
 	document.getElementById("zeppinVideo").remove();
 	var videostr="<video id='zeppinVideo' webkit-playsinline><source id='videoSource' src='.."+$(".barbar select").val()+"'>您的版本不支持该视频播放，请更换浏览器或者升级浏览器版本</video>";
 	$(".ZeppinVideo_Top").append(videostr);
-	//alert(2)
 	ClickVideo(document.getElementById("zeppinVideo"));
-	//alert(document.getElementById("zeppinVideo").currentTime)
-	//alert(playType);
 	if(!playType){
 		document.getElementById("zeppinVideo").play();
-		//alert("pause1")
 	}else{
 		document.getElementById("zeppinVideo").play();
-		//alert("play1")
 	}
-	//alert(document.getElementById("zeppinVideo"));
-	//alert(thistime);
 	document.getElementById("zeppinVideo").currentTime = thistime;
-	//alert("end")
 }
 
 //相关评测
 function related(e){
 	var src="";
 	var clear="<div class='clear'></div>";
-	$.get('../rest/webinterface/publishList?video='+e+'&pagesize=4&pagenum=&sort=',function(r){
+	$.get('../front/web/webinterface!execute?uid=i0002&video='+e+'&pagesize=4&pagenum=&sort=',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -463,15 +407,6 @@ function related(e){
 			alert(r.message);
 		}
 	})
-}
-
-function orient() {
-    if (window.orientation > 90 || window.orientation < 180) {
-//    	alert(3)
-    }
-    else if (window.orientation == 90 || window.orientation == -90) {
-    	alert(4)
-    }
 }
 
 /* 在页面加载的时候调用 */

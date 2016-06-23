@@ -229,8 +229,8 @@ ul.page-sidebar-menu ul.sub-menu > li > a i {
 Sidebar toggler
 ***/
 .sidebar-toggler {  
-  background-image: url(../../img/sidebar-toggler-light.jpg);
-  background-color: #333;
+/*   background-image: url(../../img/sidebar-toggler-light.jpg); */
+/*   background-color: #333; */
 }
 /* search box bg color on expanded */
 .page-sidebar-closed .page-sidebar .sidebar-search.open .form-container {

@@ -4,7 +4,7 @@
 <control>
 	<action path="/front/admin/category!execute">
 		<input uid="a0001" service="categoryService" method="list" desc="获取栏目列表">
-			<parameter key="id" toKey="id" regex="length=36"/>
+			<parameter key="id" toKey="id"/>
 			<parameter key="name" toKey="name"/>
 			<parameter key="level" toKey="level"/>
 			<parameter key="parent" toKey="parent"/>
@@ -20,8 +20,8 @@
 		</input>
 		
 		<input uid="a0003" service="categoryService" method="add" desc="添加栏目">
-			<parameter key="name" toKey="name" regex="required,length=36"/>
-			<parameter key="parent" toKey="parent" regex="length=36"/>
+			<parameter key="name" toKey="name" regex="required"/>
+			<parameter key="parent" toKey="parent"/>
 			<parameter key="status" toKey="status" regex="required"/>
 			<parameter key="usersession.id" toKey="creator" scope="session" regex="required"/>
 		</input>

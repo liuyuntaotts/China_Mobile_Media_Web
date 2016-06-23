@@ -4,7 +4,7 @@
 <control>
 	<action path="/front/admin/commodity!execute">
 		<input uid="b0001" service="commodityService" method="list" desc="获取商品列表">
-			<parameter key="id" toKey="id" regex="length=36"/>
+			<parameter key="id" toKey="id"/>
 			<parameter key="name" toKey="name"/>
 			<parameter key="price" toKey="price"/>
 			<parameter key="originalPrice" toKey="originalPrice"/>
@@ -20,7 +20,7 @@
 		<input uid="b0003" service="commodityService" method="add" desc="添加商品">
 			<parameter key="url" toKey="url" regex="required"/>
 			<parameter key="name" toKey="name" regex="required"/>
-			<parameter key="cover" toKey="cover" regex="length=36"/>
+			<parameter key="cover" toKey="cover"/>
 			<parameter key="price" toKey="price" regex="num,required"/>
 			<parameter key="originalPrice" toKey="originalPrice" regex="num,required"/>
 			<parameter key="displays" toKey="displays"/>
@@ -31,7 +31,7 @@
 			<parameter key="id" toKey="id" regex="required,length=36"/>
 			<parameter key="url" toKey="url" regex="required"/>
 			<parameter key="name" toKey="name" regex="required"/>
-			<parameter key="cover" toKey="cover" regex="length=36"/>
+			<parameter key="cover" toKey="cover"/>
 			<parameter key="price" toKey="price" regex="required"/>
 			<parameter key="originalPrice" toKey="originalPrice" regex="required"/>
 			<parameter key="displays" toKey="displays"/>

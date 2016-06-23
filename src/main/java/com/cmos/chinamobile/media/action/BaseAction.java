@@ -127,19 +127,19 @@ public abstract class BaseAction extends ActionSupport implements BeanFactoryAwa
 					}
 				}
 				if(resultMap.containsKey("pageSize") && resultMap.get("pageSize") != null){
-					if(!"".equals(resultMap.get("pageNum").toString())){
+					if(!"".equals(resultMap.get("pageSize").toString())){
 						result.setPageSize(Integer.parseInt(resultMap.get("pageSize").toString()));
 					}
 				}
 				
 				if(resultMap.containsKey("totalPageCount") && resultMap.get("totalPageCount") != null){
-					if(!"".equals(resultMap.get("pageNum").toString())){
+					if(!"".equals(resultMap.get("totalPageCount").toString())){
 						result.setTotalPageCount(Integer.parseInt(resultMap.get("totalPageCount").toString()));
 					}
 				}
 				
 				if(resultMap.containsKey("totalResultCount") && resultMap.get("totalResultCount") != null){
-					if(!"".equals(resultMap.get("pageNum").toString())){
+					if(!"".equals(resultMap.get("totalResultCount").toString())){
 						result.setTotalResultCount(Integer.parseInt(resultMap.get("totalResultCount").toString()));
 					}
 				}

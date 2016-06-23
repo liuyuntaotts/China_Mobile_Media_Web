@@ -44,7 +44,7 @@ From Medium Devices Up To Larger Devices
 	}
 
   	.page-content { 
-  		margin-left: 225px; 
+/*   		margin-left: 225px;  */
 		margin-top: 0px;
 		min-height: 760px; 
 		padding: 25px 20px 20px 20px;
@@ -463,7 +463,7 @@ From Medium Devices Up To Larger Devices
 Up To Medium Devices
 ***/
 
-@media (max-width:991px) { 
+@media (max-width:200px) { 
 	
 	/***
  	Page header

@@ -1,11 +1,10 @@
 $(function(){
 	
 	getList();
-	//getIndexlist();
 })
 //获取列表
 function getList(){
-	$.get('../rest/webinterface/categoryList',function(r){
+	$.get('../front/web/webinterface!execute?uid=i0001',function(r){
 		if(r.status=="success"){
 			var str ="";
 			var strs="";
@@ -48,8 +47,7 @@ function getList(){
 
 //首页信息新机发布
 function getIndexlist(id,num){
-	$.get('../rest/webinterface/publishList?category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
-		//console.log(r);
+	$.get('../front/web/webinterface!execute?uid=i0002&category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -78,7 +76,7 @@ function getIndexlist(id,num){
 
 //首页信息测评
 function getIndexlists(id,num){
-	$.get('../rest/webinterface/publishList?category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
+	$.get('../front/web/webinterface!execute?uid=i0002&category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -107,7 +105,7 @@ function getIndexlists(id,num){
 
 //首页信息业务办理
 function getIndexlistss(id,num){
-	$.get('../rest/webinterface/publishList?category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
+	$.get('../front/web/webinterface!execute?uid=i0002&category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -126,7 +124,7 @@ function getIndexlistss(id,num){
 
 //首页信息明星Show
 function getIndexlistsss(id,num){
-	$.get('../rest/webinterface/publishList?category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
+	$.get('../front/web/webinterface!execute?uid=i0002&category='+id+'&pagesize='+num+'&pagenum=&sort=',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
