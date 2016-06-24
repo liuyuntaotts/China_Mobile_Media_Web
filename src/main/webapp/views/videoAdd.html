@@ -151,10 +151,10 @@
 									$.post('../front/admin/videoinfo!execute?uid=g0004&' + str, function(data) {
 										if (data.status == "success") {
 											if(buttonType==1){
-												$("#contentIframe").attr("src","../views/videoAdd.html");
+												$("#contentIframe",window.top.document).attr("src","../views/videoAdd.html");
 												layer.msg("添加成功！");
 											}else{
-												$("#contentIframe").attr("src","../views/videoList.html");
+												$("#contentIframe",window.top.document).attr("src","../views/videoList.html");
 												layer.msg("添加成功！");
 											}
 										} else {

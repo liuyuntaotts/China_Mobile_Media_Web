@@ -236,8 +236,9 @@ table td{padding:2px !important;}
 					var page = (typeof pagenum == 'undefined') ? 1 : pagenum;
 					var d = dialog({
 					    title: '系统提示',
-						width : 320,
-					    content: '加载中...'
+					    width : 220,
+						height:60,
+					    content: '<p style="line-height:50px;">加载中...</p>'
 					});
 					d.showModal();
 					$.getJSON('../front/admin/videoinfo!execute?uid=g0008',function(r) {

@@ -204,8 +204,9 @@ table td{padding:2px !important;}
 					var page = (typeof pagenum == 'undefined') ? 1 : pagenum;
 					var d = dialog({
 					    title: '系统提示',
-						width : 320,
-					    content: '加载中...'
+						width : 220,
+						height:60,
+					    content: '<p style="line-height:50px;">加载中...</p>'
 					});
 					d.showModal();
 					$.getJSON('../front/admin/videoPublish!execute?uid=h0007&category='+parent,function(r) {
@@ -259,8 +260,9 @@ table td{padding:2px !important;}
 				
 				
 				$(function(){
+					var parent = (url('?parent') != null) ? url('?parent') : '';
+					$(".btn-create").attr('href','../views/videoPublishAdd.html?cid='+parent);
 					function init() {
-						var parent = (url('?parent') != null) ? url('?parent') : '';
 						var level = (url('?level') != null) ? '' : 1; 
 						var navarr = []; 
 						$.get('../front/admin/category!execute?uid=a0006&parent='+parent,function(r) {
@@ -273,8 +275,7 @@ table td{padding:2px !important;}
 								
 							}
 						}).done(function(){
-							$(".titleList").append(navarr.join(''));
-							$(".btn-create").attr('href','../views/videoPublishAdd.html?cid='+parent);
+							$(".titleList").append(navarr.join(''));	
 						});
 						getList();
 					};

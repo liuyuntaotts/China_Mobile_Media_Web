@@ -37,6 +37,9 @@ function gotoUrl(url){
 $(function() {
 	var html = '';
 	$.getJSON('../front/admin/left!execute?uid=c0001', function(r) {
+		if(r.status == "unlogin"){
+			window.top.location.href = "../views/login.html";
+		}
 		if(r.status == "success"){
 			$.each(r.data,function(i,v){
 				html += '<li><a class="" href="javascript:;" onclick="">'+v.name+'</a><ul class="sub-menu">'
@@ -70,54 +73,47 @@ $(function() {
 
 <div class="page-container">
 	<div class="page-sidebar-wrapper" style="width:15%;float:left;">
-                <div class="page-sidebar navbar-collapse" style="width:100%;">
-                    <!-- BEGIN SIDEBAR MENU -->
-                    <ul class="page-sidebar-menu nav" id="page-sidebar-menu">
-                        <li class="sidebar-toggler-wrapper">
-                            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                            <div class="sidebar-toggler hidden-phone"></div>
-                            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                        </li>
+        <div class="page-sidebar navbar-collapse" style="width:100%;">
+            <!-- BEGIN SIDEBAR MENU -->
+            <ul class="page-sidebar-menu nav" id="page-sidebar-menu">
+                <li class="sidebar-toggler-wrapper">
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    <div class="sidebar-toggler hidden-phone"></div>
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                </li>
 
-                        <li class="leftli">
-                            <a href="javascript:;">
-                                <i class="fa fa-gears icon-home icon-black"></i><span class="title"> 资源管理 </span>
-                                <!-- <span class="arrow "> </span> -->
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="javascript:" onclick="gotoUrl('../views/categoryList.html');">
-                                        栏目管理
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:" onclick="gotoUrl('../views/videoList.html');">
-                                        视频管理
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" onclick="gotoUrl('../views/commodityList.html');">
-                                        商品管理
-                                    </a>
-                                </li>
-                            </ul>
+                <li class="leftli">
+                    <a href="javascript:;">
+                        <i class="fa fa-gears icon-home icon-black"></i><span class="title"> 资源管理 </span>
+                        <!-- <span class="arrow "> </span> -->
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="javascript:" onclick="gotoUrl('../views/categoryList.html');">栏目管理</a>
                         </li>
+                        <li>
+                            <a href="javascript:" onclick="gotoUrl('../views/videoList.html');">视频管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="gotoUrl('../views/commodityList.html');">商品管理</a>
+                          </li>
+                      </ul>
+                  </li>
 
-						<li class="leftli">
-                            <a href="javascript:;">
-                                <i class="fa fa-user icon-home icon-black"></i><span class="title"> 发布管理 </span>
-                                <!-- <span class="arrow "> </span> -->
-                            </a>
-                            <ul class="sub-menu categoryList">
-                                <li><a href="javascript:;" onclick="gotoUrl('../views/videoPublishList.html?parent=062b6a49-5332-430a-a91d-1faf040a1c07');">新品发布</a></li>
-     
-                            </ul>
-                        </li>
+				<li class="leftli">
+                      <a href="javascript:;">
+                          <i class="fa fa-user icon-home icon-black"></i><span class="title"> 发布管理 </span>
+                    </a>
+                    <ul class="sub-menu categoryList">
+                        <li><a href="javascript:;" onclick="gotoUrl('../views/videoPublishList.html?parent=062b6a49-5332-430a-a91d-1faf040a1c07');">新品发布</a></li>
 
                     </ul>
-                    <!-- END SIDEBAR MENU -->
-                </div>
-            </div>
+                </li>
+
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+    </div>
 	<iframe src="videoList.html" frameborder=0 height="" width="84%" id="contentIframe"></iframe>
 	<iframe src="footer.html" frameborder=0 width="100%" height="61px"></iframe>
 	
