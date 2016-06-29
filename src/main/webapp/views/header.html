@@ -26,6 +26,7 @@
 <script src="../assets/plugins/jquery.simplePagination.js"></script>
 <script src="../assets/plugins/jsrender.min.js"></script>
 <script src="../assets/plugins/underscore-min.js"></script>
+<script src="../assets/scripts/header.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="header navbar navbar-inverse navbar-fixed-top">
@@ -48,15 +49,6 @@
             </div>
             <!-- END TOP NAVIGATION BAR -->
         </div>
-        <script>
-        	function logout(){
-        		$.get('../front/admin/user!logout?uid=u0002',function(result){
-        			if(result.status == 'success'){
-        				window.top.location.href = "../views/login.html";
-        			}
-        		})
-        	}
-        </script>
 		<!--head end-->
 </body>
 </html>

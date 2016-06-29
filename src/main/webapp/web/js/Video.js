@@ -136,6 +136,9 @@ function ClickVideo(video){
         if (timeDrag) {
             timeDrag = false;
             updatebar(Number(event.touches[0].pageX));
+            for(var i=0;i<arr.length;i++){
+            	$(".videoAnimate"+i).css("bottom","0.8rem");
+            }
         }
     });
     $(document).on('touchmove', function (e) {   	
@@ -283,7 +286,7 @@ $(function(){
 
 //获取列表
 function getList(){
-	$.get('../front/web/webinterface!execute?uid=i0001',function(r){
+	$.get('../front/web/webInterface!execute?uid=i0001',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -302,7 +305,7 @@ function aaa(e){
 
 //获取视频信息
 function videoInfo(a){
-	$.get('../front/web/webinterface!execute?uid=i0003&id='+a,function(r){
+	$.get('../front/web/webInterface!execute?uid=i0003&id='+a,function(r){
 		if(r.status=="success"){
 			$("#content .content_inner div.infomation p.title").html(r.data.videoTitle);
 			$("#content .content_inner div.infomation p.detailss").html(r.data.videoContext);
@@ -387,7 +390,7 @@ function changeType(t){
 function related(e){
 	var src="";
 	var clear="<div class='clear'></div>";
-	$.get('../front/web/webinterface!execute?uid=i0002&video='+e+'&pagesize=4&pagenum=&sort=',function(r){
+	$.get('../front/web/webInterface!execute?uid=i0002&video='+e+'&pagesize=4&pagenum=&sort=',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {

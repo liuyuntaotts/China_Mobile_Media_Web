@@ -22,7 +22,7 @@ $(function(){
 
 //获取列表
 function getList(){
-	$.get('../front/web/webinterface!execute?uid=i0001',function(r){
+	$.get('../front/web/webInterface!execute?uid=i0001',function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {
@@ -43,7 +43,7 @@ function screen(e){
 	n=1;
 	var src="";
 	var clear="<div class='clear'></div>";
-	$.get('../front/web/webinterface!execute?uid=i0002&category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
+	$.get('../front/web/webInterface!execute?uid=i0002&category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
     	count=r.totalPageCount;
 		if(r.status=="success"){
 			var str ="";
@@ -82,7 +82,7 @@ function screen(e){
 function screens(){
 	var src="";
 	var clear="<div class='clear'></div>";
-	$.get('../front/web/webinterface!execute?uid=i0002&category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
+	$.get('../front/web/webInterface!execute?uid=i0002&category='+e+'&pagesize=6&pagenum='+n+'&sort=',function(r){
     	count=r.totalPageCount;
 		if(r.status=="success"){
 			var str ="";
@@ -114,7 +114,7 @@ function screens(){
 
 //获取二级列表
 function secondary(parent){
-	$.get('../front/web/webinterface!execute?uid=i0001&parent='+parent,function(r){
+	$.get('../front/web/webInterface!execute?uid=i0001&parent='+parent,function(r){
 		if(r.status=="success"){
 			var str ="";
 			for ( var i = 0, l = r.data.length; i < l; i++ ) {

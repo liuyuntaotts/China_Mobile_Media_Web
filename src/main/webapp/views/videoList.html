@@ -70,7 +70,7 @@ table td{padding:2px !important;}
 								<a onclick="changeStatus(this)" data-id="{{:id}}" data-url="../front/admin/videoinfo!execute?uid=g0006&id={{:id}}" class="linkbtn">删除</a>
 								
 							{{else status=='transcoding'}}
-								<button onclick="changeStatus(this)" data-id="{{:id}}" data-url="../front/admin/videoinfo!execute?uid=g0007&status=uploaded&id={{:id}}" class="linkbtn">重新处理</a>
+								<a onclick="changeStatus(this)" data-id="{{:id}}" data-url="../front/admin/videoinfo!execute?uid=g0007&status=uploaded&id={{:id}}" class="linkbtn">重新处理</a>
 							{{else status=='failed'}}
 								<a onclick="changeStatus(this)" data-id="{{:id}}" data-url="../front/admin/videoinfo!execute?uid=g0007&status=uploaded&id={{:id}}" class="linkbtn">重新处理</a>
 								<a onclick="changeStatus(this)" data-id="{{:id}}" data-url="../front/admin/videoinfo!execute?uid=g0007&status=destroy&id={{:id}}" class="linkbtn">彻底删除</a>
@@ -126,44 +126,11 @@ table td{padding:2px !important;}
 
 		<!--left-->
 			<div class="page-container">
-            <!-- BEGIN SIDEBAR -->
-            <!-- END SIDEBAR -->
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
                 <div class="page-content">
-                    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-                    <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                    <h4 class="modal-title">Modal title</h4>
-                                </div>
-                                <div class="modal-body">
-                                    Widget settings form goes here
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn blue">
-                                        Save changes
-                                    </button>
-                                    <button type="button" class="btn default" data-dismiss="modal">
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- /.modal-content -->
-                        </div>
-                        <!-- /.modal-dialog -->
-                    </div>
-                    <!-- /.modal -->
-                    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-                    <!-- BEGIN STYLE CUSTOMIZER -->
-                   
-                    <!-- END STYLE CUSTOMIZER -->
-					
 					<!--content-->
-						<div class="content">
-							
+						<div class="content">							
 							<p class="title">视频管理</p>
 							<hr>
 							<div class="cui-menu">
@@ -203,112 +170,6 @@ table td{padding:2px !important;}
 							</div>
 							<div id="queboxCnt"></div>
 							<div class="pull-right pagination  compact-theme" id="pagnationPaper"></div>
-							
-				<script type="text/javascript">
-				var pagenum = '1';
-				
-				function changeStatus(t) {
-					var obj = $(t),cUrl = obj.attr('data-url');
-					$.getJSON(cUrl, function(ret) {
-						if (ret.status == 'success') {
-							getList();
-						} else {
-							alert('失败,' + ret.message);
-						}
-					})
-					return false;
-				}
-				
-				$('#searchForm').submit(function(){
-					var key = $('input[name="stype"]:checked').val(),obj = {};
-					obj[key] = $('#searchheader').val();
-					var str = '&'+key+'='+obj[key];
-					getList(str);
-					return false;
-				});
-				
-				
-				//加载列表
-				function getList(params) {
-					if (params == undefined){
-						params = '';
-					}
-					var page = (typeof pagenum == 'undefined') ? 1 : pagenum;
-					var d = dialog({
-					    title: '系统提示',
-					    width : 220,
-						height:60,
-					    content: '<p style="line-height:50px;">加载中...</p>'
-					});
-					d.showModal();
-					$.getJSON('../front/admin/videoinfo!execute?uid=g0008',function(r) {
-						if(r.status == 'success') {
-							$('#status_checked').html(r.data.checked);
-							$('#status_unchecked').html(r.data.unchecked);
-							$('#status_deleted').html(r.data.deleted);
-							$('#status_uploaded').html(r.data.uploaded);
-							$('#status_failed').html(r.data.failed);
-							$('#status_transcoding').html(r.data.transcoding);
-						}
-					});
-					var filterStatus= $("#statusChecked").val();
-					$.getJSON('../front/admin/videoinfo!execute?uid=g0001&pagesize=10&sort=createtime desc'+params+'&pagenum='+page+'&status='+filterStatus, function(r) {
-						r.totalPageCount && $('.quepager').html('<span style="font-weight:normal">'+ r.pageNum +'</span>/'+ r.totalPageCount);
-
-						if(r.status == 'success' && r.data.length > 0) {
-						    var template = $.templates('#queboxTpl');
-						    var html = template.render(r.data);
-						    $('#queboxCnt').html(html);
-						    
-						    $(".btn-edit").colorbox({
-								iframe : true,
-								width : "860px",
-								height : "500px",
-								opacity : '0.5',
-								overlayClose : false,
-								escKey : true
-							});
-						    
-						} else if (r.status == 'success' && r.data.length == 0) {
-							$('#pagnationPaper').html('');
-							$('#queboxCnt').html('<div class="no_data">无搜索结果</div>');
-						}
-						$(".main").animate({scrollTop: 0}, 1e3);
-						
-						d.close().remove();
-						
-					}).done(function(r){//分页
-						$('#pagnationPaper').pagination({
-							currentPage : r.pageNum,
-					        items: r.totalResultCount,
-							edges: 3,
-					        itemsOnPage : r.pageSize,
-					        
-							onPageClick : function(pageNumber,event) {
-								pagenum = pageNumber;
-								getList();
-							}
-					    });
-						
-					});
-				}
-				
-				
-				
-				$(function(){
-					function init() {
-						getList();
-					};
-					init();
-					$(".statusbar a").click(function(){
-						$(this).addClass("light").siblings().removeClass("light");
-						$("#statusChecked").val($(this).find("span").attr("name"));
-						pagenum = '1';
-						setTimeout("getList()",100);
-					});
-				})
-				
-				</script>
 					<!--content end-->
 
                 </div>

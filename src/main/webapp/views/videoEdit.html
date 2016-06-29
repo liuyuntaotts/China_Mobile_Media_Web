@@ -18,9 +18,13 @@
 <script src="../assets/plugins/url.min.js"></script>
 <script src="../assets/plugins/mustache.js"></script>
 <script src="../assets/plugins/jquery.cokie.min.js"></script>
+<script src="../assets/scripts/videoEdit.js" type="text/javascript"></script>
 <style>
 	textarea{resize: none;width: 400px;height: 100px;max-width: 400px;max-height: 100px;font-size:18px;}
 	.controls input{width:400px;font-size:18px;}
+	.btn{background:#3ebef3;color:#fff;width:90px;}
+	.btn:hover{background:#3ebee9;color:#fff;}
+	.cancel{background:#e6e7ec;}
 </style>
 </head>
 <body>
@@ -92,45 +96,11 @@
 					<div class="offset7" style="margin-left:150px;">
 						<button class="btn" type="submit">确定</button>
 						<button id="colorboxcancel" onclick="parent.$.colorbox.close()"
-							class="btn" type="button">取消</button>
+							class="btn cancel" type="button">取消</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-	<script>
-		$(function() {
-			var id = url('?id');
-				$('input[name="id"]').val(id);
-			$.get('../front/admin/videoinfo!execute?uid=g0002&id='+url('?id'),function(r){
-				if(r.status == 'success') {
-					var st = JSON.stringify(r);
-				    var template = $('#DataTpl').html();
-				    var html = Mustache.render(template, $.parseJSON(st));
-				    $('#HtmlTpl').html(html);
-				}else {
-					alert('服务端出错！请稍后重试！');
-				}
-			}).done(function(){
-				$('#formsubmit').submit(function() {
-					var str = $(this).serialize();
-					$.post('../front/admin/videoinfo!execute?uid=g0005&'+ str, function(data) {
-						if (data.status == "success") {							
-							$("#contentIframe",window.top.document).attr("src","../views/videoList.html");
-						} else {
-							$('.alert-danger').html(data.message).show();
-						}
-					})
-					return false;
-				});
-			})
-			
-			//项目类型 helper 函数
-			$(document).on("click",function(e) {
-				if(!$(e.target).parents().is('.ufc'))
-					$('.uul').hide();
-			});
-		})
-	</script>
 <body>
 </html>

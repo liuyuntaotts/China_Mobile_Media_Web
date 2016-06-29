@@ -16,8 +16,8 @@ i{font-style: normal;}
 #contents .content_inners a.linkAddress{ color: #888; font-size: 16px;}
 
 #contents .content_inners .videoContent{ width: 100%;}
-#contents .content_inners .videoContent p.videoTitle{ font-size: 18px;}
-#contents .content_inners .videoContent p.videoTitle label{font-weight: normal; padding: 15px 0;}
+#contents .content_inners .videoContent p.videoTitle{ font-size: 18px;text-align:center;font-weight:bold;line-height:48px;font-family:"微软雅黑";}
+#contents .content_inners .videoContent p.videoTitle label{font-weight: bold; padding: 15px 0; }
 
 .ZeppinVideo {
         position: relative;
@@ -142,7 +142,8 @@ i{font-style: normal;}
 #contents .content_inners .picbox .picbox_inner li{ width: 180px;padding: 10px; display: inline-block; cursor: pointer; position: relative;}
 #contents .content_inners .picbox .picbox_inner li img{ width: 100%;}
 #contents .content_inners .picbox .picbox_inner li span{ position: absolute; padding: 5px 10px; background: rgba(0,0,0,0.7);color: #fff;bottom: 10px;right: 10px; font-size: 14px;}
-a.btn{background:#CCCCCC; margin: 20px 0; margin-left: 42%; font-size: 20px;}
+a.btn{margin: 20px 0; margin-left: 42%;background:#3ebef3;color:#fff;border:none;}
+a.btn:hover{background:#3ebee9;color:#fff;}
 p.listTitle{ padding: 10px 0; font-size: 18px;}
 table{ border: #C9C9C9 1px solid;}
 table th{text-align: center;}
